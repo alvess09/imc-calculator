@@ -1,6 +1,7 @@
 package com.example.imccalculator
 
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -14,28 +15,43 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setListeners()
     }
-     private val alturaEDT: TextView? = findViewById(R.id.alturaEDT)
-     private val pesoEDT: TextView? = findViewById(R.id.pesoEDT)
-     private val calcularBTN: Button? = findViewById(R.id.calcularBTN)
-     private val titleTXT: TextView? = findViewById(R.id.titleTXT)
+
+    //recuperar os dados digitados nas caixas de texto da activity e armazenar em uma variável
+    //criar uma função que calcule o IMC  com a formula peso / altura * 2
 
     private fun setListeners() {
-        alturaEDT?.doAfterTextChanged { text ->
-           // Toast.makeText(this,text.toString(), Toast.LENGTH_SHORT).show()
-        }
-        pesoEDT?.doOnTextChanged{ text, _, _, _ ->
+        val peso: Float = R.id.pesoTXT.toFloat()
+        val altura: Float = R.id.alturaTXT.toFloat()
+        val resultado  = calcularIMC(peso, altura)
+        TODO("Criar Toast de resultado do Calculo de IMC")
+    }
 
-        }
-        calcularBTN?.setOnClicListener {
-            calcularIMC(pesoEDT.text.toString(), alturaEDT.text.toString)
-        }
+    private fun calcularIMC (peso: Float, altura: Float) {
+        val imc = peso / (altura * 2)
+        return val resultado: String = ""
+        /* menor que 18,5 abaixo do peso ideal
+         18,5 a 24,9 peso normal
+         25,0 a 29,9 Acima do peso
+         30,0 a 34,9 Obesidade classe 1
+         35,0 a 39,9 Obesidade classe 2
+         imc <= 40,0 Obesidade classe 3
+         fonte OMS */
+
+        if (imc < 18.5){
+                    resultado = "abaixo do peso normal"
+                }else if(imc > 18.5 && imc < 25.0){
+                    resultado = "Peso Normal"
+                }else if(imc > 25.0 && imc < 30.0){
+                    resultado = "Obesidade Classe 1"
+                }else if(imc > 30.0 && imc < 35.0){
+                    resultado = "Obesidade Classe 2"
+                }else if(imc > 35.0 && imc < 40.0){
+                    resultado = "Obesidade Classe 3"
+                }
+
+
+
+       }
     }
-    private fun calcularIMC (peso: String, altura: String) {
-        val peso = peso.toFloatOrNull()
-        val altura = altura.toFloatOrNull()
-        if (peso != null && altura != null){
-         val imc = peso / (altura * altura)
-         titleTXT.text = "Seu IMC é de: $imc.2f".format(imc)
-        }
-    }
-}
+
+
