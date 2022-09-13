@@ -1,13 +1,9 @@
 package com.example.imccalculator
 
 import android.os.Bundle
-import android.view.Gravity
 import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.doAfterTextChanged
-import androidx.core.widget.doOnTextChanged
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,18 +13,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     //recuperar os dados digitados nas caixas de texto da activity e armazenar em uma variável
+    // c
     //criar uma função que calcule o IMC  com a formula peso / altura * 2
 
     private fun setListeners() {
         val peso: Float = R.id.pesoTXT.toFloat()
         val altura: Float = R.id.alturaTXT.toFloat()
         val resultado  = calcularIMC(peso, altura)
-        TODO("Criar Toast de resultado do Calculo de IMC")
+
+        val btnCalcular = findViewById<Button>(R.id.calcularBTN)
+        val duration = Toast.LENGTH_SHORT
+
+        btnCalcular.setOnClickListener{
+            val toast = Toast.makeText(this, resultado, duration).setGravity(top).show()
+        }
+
+
     }
 
-    private fun calcularIMC (peso: Float, altura: Float) {
+    private fun calcularIMC (peso: Float, altura: Float): String {
         val imc = peso / (altura * 2)
-        return val resultado: String = ""
+        var resultado: String = ""
         /* menor que 18,5 abaixo do peso ideal
          18,5 a 24,9 peso normal
          25,0 a 29,9 Acima do peso
@@ -48,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 }else if(imc > 35.0 && imc < 40.0){
                     resultado = "Obesidade Classe 3"
                 }
-
+        return resultado
 
 
        }
