@@ -4,4 +4,5 @@
     <string name="txt_peso">Peso em KG (87.9)</string>
     <string name="txt_altura">Altura em Mt (1.79)</string>
     <string name="btnTXT">CALCULAR</string>
+    <string name="tc_imc_title">Seu IMC</string>
 </resources>

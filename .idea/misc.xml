@@ -3,10 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_circle_high.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable-v24/ic_circle_high_plus1.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable-v24/ic_circle_high_plus2.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable-v24/ic_circle_high_plus3.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable-v24/ic_circle_low.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable-v24/ic_circle_normal.xml" value="0.276" />
         <entry key="app/src/main/res/drawable/ic_app.xml" value="0.2635" />
+        <entry key="app/src/main/res/drawable/ic_card.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable/ic_circle2.xml" value="0.276" />
+        <entry key="app/src/main/res/drawable/ic_circle_imc.xml" value="0.276" />
         <entry key="app/src/main/res/font/comfortaa.xml" value="0.22" />
+        <entry key="app/src/main/res/layout-v28/activity_resut.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_resut.xml" value="0.26902173913043476" />
+        <entry key="app/src/main/res/layout/activity_resut.xml" value="0.33" />
       </map>
     </option>
   </component>
@@ -15,5 +25,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.33" />
+      </ProjectState>
+    </option>
   </component>
 </project>

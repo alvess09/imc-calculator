@@ -12,9 +12,8 @@ class MainActivity : AppCompatActivity() {
         setListeners()
     }
 
-    //recuperar os dados digitados nas caixas de texto da activity e armazenar em uma variável
-    // c
-    //criar uma função que calcule o IMC  com a formula peso / altura * 2
+    //apresentar resultado em um card
+
 
     private fun setListeners() {
         val peso: Float = R.id.pesoTXT.toFloat()
@@ -31,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun calcularIMC (peso: Float, altura: Float): String {
+     fun calcularIMC (peso: Float, altura: Float): String {
         val imc = peso / (altura * 2)
         var resultado: String = ""
         /* menor que 18,5 abaixo do peso ideal
