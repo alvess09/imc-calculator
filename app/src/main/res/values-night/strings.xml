@@ -5,4 +5,21 @@
     <string name="txt_altura">Altura em Mt (1.79)</string>
     <string name="btnTXT">CALCULAR</string>
     <string name="tc_imc_title">Seu IMC</string>
+    <string name="tv_title_tabela_imc">Tabela IMC</string>
+    <string name="tv_title_low_imc">menor que 18,5 - Abaixo do peso</string>
+    <string name="tv_title_normal_imc">de 18,5 a 24,9 - Peso Normal</string>
+    <string name="tv_title_high_imc">de 25 a 29,9 - Acima do Peso</string>
+    <string name="tv_title_obesity1_imc">de 30 a 34,9 - Obesidade classe 1</string>
+    <string name="tv_title_obesity2_imc">de 35 a 39,9 - Obesidade classe 2</string>
+    <string name="tv_title_obesity3_imc">apartir de 40 - Obesidade classe 3</string>
+    <string name="tv_result_imc_number">27</string>
+    <string name="cor_abaixo_do_peso">cor abaixo do peso</string>
+    <string name="cor_peso_normal">cor, legenda peso normal</string>
+    <string name="cor_acima_do_peso">cor, legenda acima do peso</string>
+    <string name="cor_peso_obesidade_classe_1">cor, legenda peso obesidade classe 1</string>
+    <string name="cor_peso_obesidade_classe_2">cor, legenda peso obesidade classe 2</string>
+    <string name="cor_peso_obesidade_classe_3">cor, legenda peso obesidade classe 3</string>
+    <string name="circulo_do_resultado_do_imc">circulo do resultado do imc</string>
+    <string name="card_tabela_de_imc">card de tabela de IMC</string>
+    <string name="card_do_resultado_do_imc">card do resultado do IMC</string>
 </resources>

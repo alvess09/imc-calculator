@@ -6,102 +6,272 @@
     android:layout_height="match_parent"
     tools:context=".ResutActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/iv_card_imc"
-                android:layout_width="385dp"
-                android:layout_height="244dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_card" />
-
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="168dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="@string/tc_imc_title"
-                android:textColor="@color/black"
-                android:textFontWeight="400"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ic_circle"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.497"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:targetApi="p" />
-
-            <ImageView
-                android:id="@+id/ic_circle"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
-                android:layout_marginStart="112dp"
-                android:layout_marginEnd="112dp"
-                app:layout_constraintBottom_toBottomOf="@+id/iv_card_imc"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/iv_card_imc"
-                app:layout_constraintVertical_bias="0.84"
-                app:srcCompat="@drawable/ic_circle_imc" />
-
-            <TextView
-                android:id="@+id/tv_result_number"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="26dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="27"
-                android:textSize="64sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"
-                app:layout_constraintBottom_toBottomOf="@+id/ic_circle"
-                app:layout_constraintEnd_toEndOf="@+id/ic_circle"
-                app:layout_constraintStart_toStartOf="@+id/ic_circle"
-                app:layout_constraintTop_toTopOf="@+id/ic_circle" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="12dp">
+
+        <ImageView
+            android:id="@+id/iv_card_imc"
+            android:layout_width="388dp"
+            android:layout_height="246dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/card_do_resultado_do_imc"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_card_imc" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TextView"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="366dp" />
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="168dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/tc_imc_title"
+            android:textColor="@color/black"
+            android:textFontWeight="400"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:targetApi="p" />
+
+        <ImageView
+            android:id="@+id/ic_circle"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginStart="112dp"
+            android:layout_marginEnd="112dp"
+            android:contentDescription="@string/circulo_do_resultado_do_imc"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_imc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_card_imc"
+            app:layout_constraintVertical_bias="0.84"
+            app:srcCompat="@drawable/ic_circle_imc" />
+
+        <TextView
+            android:id="@+id/tv_result_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="26dp"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/tv_result_imc_number"
+            android:textColor="@color/black"
+            android:textSize="64sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/ic_circle"
+            app:layout_constraintEnd_toEndOf="@+id/ic_circle"
+            app:layout_constraintStart_toStartOf="@+id/ic_circle"
+            app:layout_constraintTop_toTopOf="@+id/ic_circle" />
+
+        <ImageView
+            android:id="@+id/iv_card_table"
+            android:layout_width="388dp"
+            android:layout_height="388dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/card_tabela_de_imc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_card_imc"
+            app:srcCompat="@drawable/ic_card_table_imc" />
+
+        <TextView
+            android:id="@+id/tv_title_table_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_tabela_imc"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_card_table"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_card_imc"
+            app:layout_constraintVertical_bias="0.083" />
+
+        <ImageView
+            android:id="@+id/iv_circle_low"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_abaixo_do_peso"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_table_imc"
+            app:srcCompat="@drawable/ic_circle2"
+            tools:ignore="ImageContrastCheck"
+            app:tint="@color/low_weight" />
+
+        <ImageView
+            android:id="@+id/iv_circle_normal"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_peso_normal"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_low"
+            app:srcCompat="@drawable/ic_circle2"
+            app:tint="@color/normal_weight"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/iv_circle_high"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_acima_do_peso"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_normal"
+            app:srcCompat="@drawable/ic_circle2"
+            app:tint="@color/high_weight"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/iv_circle_obesity1"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_peso_obesidade_classe_1"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_high"
+            app:srcCompat="@drawable/ic_circle2"
+            app:tint="@color/obesity_1_weight"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/iv_circle_obesity2"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_peso_obesidade_classe_2"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_obesity1"
+            app:srcCompat="@drawable/ic_circle2"
+            app:tint="@color/obesity_2_weight"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/iv_circle_obesity3"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/cor_peso_obesidade_classe_3"
+            app:layout_constraintStart_toStartOf="@+id/iv_card_table"
+            app:layout_constraintTop_toBottomOf="@+id/iv_circle_obesity2"
+            app:srcCompat="@drawable/ic_circle2"
+            app:tint="@color/obesity_3_weight" />
+
+        <TextView
+            android:id="@+id/tv_title_low_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_low_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_low"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_table_imc" />
+        <TextView
+            android:id="@+id/tv_title_normal_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_normal_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_normal"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_low_imc" />
+        <TextView
+            android:id="@+id/tv_title_high_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_high_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_high"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_normal_imc" />
+        <TextView
+            android:id="@+id/tv_title_obesity1_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_obesity1_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_obesity1"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_high_imc" />
+        <TextView
+            android:id="@+id/tv_title_obesity2_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_obesity2_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_obesity2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_obesity1_imc" />
+        <TextView
+            android:id="@+id/tv_title_obesity3_imc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter"
+            android:text="@string/tv_title_obesity3_imc"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/iv_card_table"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toEndOf="@+id/iv_circle_obesity3"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_obesity2_imc" />
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
