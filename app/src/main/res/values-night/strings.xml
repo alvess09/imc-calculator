@@ -22,4 +22,8 @@
     <string name="circulo_do_resultado_do_imc">circulo do resultado do imc</string>
     <string name="card_tabela_de_imc">card de tabela de IMC</string>
     <string name="card_do_resultado_do_imc">card do resultado do IMC</string>
+    <string name="bt_next">NEXT</string>
+    <string name="imagem_logo_do_app">logo do App</string>
+    <string name="titulo_do_app">IMC Calculator</string>
+    <string name="tv_title_app">IMC Calculator</string>
 </resources>

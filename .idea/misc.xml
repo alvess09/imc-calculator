@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_circle_imc.xml" value="0.276" />
         <entry key="app/src/main/res/font/comfortaa.xml" value="0.22" />
         <entry key="app/src/main/res/layout-v28/activity_resut.xml" value="0.2713541666666667" />
+        <entry key="app/src/main/res/layout/activity_app.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_resut.xml" value="0.25" />
       </map>
@@ -27,5 +28,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>
