@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.imccalculator.R.layout.activity_resut
-
+import java.text.DecimalFormat
 
 
 class ResultActivity : AppCompatActivity() {
@@ -16,16 +16,20 @@ class ResultActivity : AppCompatActivity() {
         setContentView(activity_resut)
 
         val dados = intent.extras
-        val resultadoImc  = dados?.getString("resultadoImc")
+        val resultadoIndice  = dados?.getString("resultadoIndice")
+
+        val numeroResultadoImc = dados?.getFloat("numeroImc")
+
+
 
         val numeroResultado = findViewById<TextView>(R.id.tv_result_number)
-        numeroResultado.text = resultadoImc
+        numeroResultado.text = numeroResultadoImc.toString()
 
         //configurar a cor do circulo de acordo com o resultado
-        alteraCorDoCirculo(resultadoImc)
+        alteraCorDoCirculo(resultadoIndice)
 
         val duration =  Toast.LENGTH_SHORT
-        Toast.makeText(this, resultadoImc, duration).show()
+        Toast.makeText(this, resultadoIndice, duration).show()
 
 
     }

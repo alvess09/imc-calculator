@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imccalculator.R.layout.activity_main
+import java.text.DecimalFormat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,16 +14,27 @@ class MainActivity : AppCompatActivity() {
         setContentView(activity_main)
 
         val peso: Float = R.id.pesoTXT.toFloat()
-        val altura:Float = R.id.alturaTXT.toFloat()
-        val calculoImc:String = calcularIMC(peso, altura)
+        val altura: Float = R.id.alturaTXT.toFloat()
 
-        val duration =  Toast.LENGTH_SHORT
-        Toast.makeText(this,calculoImc, duration).show()
+        //retorno de número de IMC
+        val imc :Float  = peso / altura * altura
+
+        //TODO("formatar o numero  e depois calcular corretamente ")
+
+        //retorno de índice de IMC
+        val calculoImc: String = verificaIndice(imc)
+
+       /* val numeroFormatado: DecimalFormat = DecimalFormat("#,###.00")
+        numeroFormatado.format(imc)*/
+
+        val duracao =  Toast.LENGTH_SHORT
+        Toast.makeText(this,calculoImc, duracao).show()
 
         val btnCalcular = findViewById<Button>(R.id.calcularBTN).setOnClickListener {
             val intent: Intent = Intent(this, ResultActivity::class.java)
             //passando resultado para activity de resultado
-            intent.putExtra("resultadoImc",calculoImc)
+            intent.putExtra("resultadoIndice",calculoImc)
+            intent.putExtra("numeroImc",numeroFormatado)
             startActivity(intent)
         }
 
@@ -33,8 +45,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
-fun calcularIMC (peso: Float, altura: Float): String {
-    val imc = peso / (altura * altura)
+fun verificaIndice (imc: Float): String {
+
 
     var resultado = ""
 
@@ -46,26 +58,25 @@ fun calcularIMC (peso: Float, altura: Float): String {
        imc <= 40,0 Obesidade classe 3
      fonte OMS */
 
-    if (imc in 0.00..18.49){
+    if(imc in 0.00..18.49){
         resultado = "low"
     }
-    else if(imc in 18.5..24.99){
+    if(imc in 18.5..24.99){
         resultado = "normal"
     }
-    else if(imc in 25.0..29.99){
+    if(imc in 25.0..29.99){
         resultado = "high"
     }
-    else if(imc in 30.0..34.99){
+    if(imc in 30.0..34.99){
         resultado = "obesity1"
     }
-    else if(imc in 35.0..39.99){
+    if(imc in 35.0..39.99){
         resultado = "obesity2"
     }
-    else if(imc < 40.0){
+    if(imc < 40.0){
         resultado = "obesity3"
     }
     return resultado
-
 
 }
 
