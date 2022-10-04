@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.imccalculator.R.layout.activity_resut
-import java.text.DecimalFormat
 
 
 class ResultActivity : AppCompatActivity() {
@@ -18,12 +17,12 @@ class ResultActivity : AppCompatActivity() {
         val dados = intent.extras
         val resultadoIndice  = dados?.getString("resultadoIndice")
 
-        val numeroResultadoImc = dados?.getFloat("numeroImc")
+        val numeroResultadoImc = dados?.getInt("numeroImc")
 
 
 
-        val numeroResultado = findViewById<TextView>(R.id.tv_result_number)
-        numeroResultado.text = numeroResultadoImc.toString()
+        val numeroImc = findViewById<TextView>(R.id.tv_result_number)
+        numeroImc.text = numeroResultadoImc.toString()
 
         //configurar a cor do circulo de acordo com o resultado
         alteraCorDoCirculo(resultadoIndice)
