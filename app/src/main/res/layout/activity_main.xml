@@ -40,11 +40,12 @@
             android:layout_height="wrap_content"
             android:background="@drawable/textview_border"
             android:fontFamily="@font/roboto"
+            android:hint="@string/txt_peso"
+            android:inputType="numberDecimal"
             android:lines="1"
             android:maxLength="6"
-            android:inputType="numberDecimal"
-            android:hint="@string/txt_peso"
-            android:textSize="15sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
             android:typeface="normal" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,11 +66,12 @@
             android:id="@+id/alturaTXT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/textview_border"
+            android:hint="@string/txt_altura"
+            android:inputType="numberDecimal"
             android:lines="1"
             android:maxLength="4"
-            android:inputType="numberDecimal"
-            android:background="@drawable/textview_border"
-            android:hint="@string/txt_altura" />
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

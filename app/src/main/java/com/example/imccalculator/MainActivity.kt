@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imccalculator.R.layout.activity_main
 
@@ -13,8 +14,8 @@ class MainActivity : AppCompatActivity(){
         setContentView(activity_main)
 
         //passando os valores recebidos para String
-        val peso: String = R.id.pesoTXT.toString()
-        val altura: String = R.id.alturaTXT.toString()
+        val peso: String = findViewById<EditText>(R.id.pesoTXT).text.toString()
+        val altura: String = findViewById<EditText>(R.id.alturaTXT).text.toString()
 
         /* executar quando clicar no botão calcular */
 
