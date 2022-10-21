@@ -1,18 +1,23 @@
 package com.example.imccalculator
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.imccalculator.R.layout.activity_app
+import com.example.imccalculator.databinding.ActivityAppBinding
 
+@SuppressLint("StaticFieldLeak")
+private lateinit var binding : ActivityAppBinding
 class App : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activity_app)
+        binding = ActivityAppBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnNext = findViewById<Button>(R.id.btn_next).setOnClickListener{
+        val btnNext = binding.btnNext.setOnClickListener{
             nextView()
         }
     }

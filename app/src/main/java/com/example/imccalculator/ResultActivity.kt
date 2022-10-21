@@ -2,31 +2,30 @@ package com.example.imccalculator
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.imccalculator.R.layout.activity_resut
+import com.example.imccalculator.databinding.ActivityResutBinding
+import kotlin.math.roundToInt
 
-
+@SuppressLint("StaticFieldLeak")
+private lateinit var binding: ActivityResutBinding
 class ResultActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activity_resut)
+        binding = ActivityResutBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val dados = this.intent.extras
-        val peso = dados?.getString("peso")
-        val altura = dados?.getString("altura")
+        val peso = dados?.getDouble("peso")
+        val altura = dados?.getDouble("altura")
+
+        Log.i("dados","$peso + $altura")
 
         val imc = calcularImc(peso.toString(), altura.toString())
 
         val indiceResultado = calculaIndice(imc)
-
-
-
-
-
 
         //configurar a cor do circulo de acordo com o resultado
         alteraCorDoCirculo(indiceResultado)
@@ -37,24 +36,23 @@ class ResultActivity : AppCompatActivity() {
 
     }
     @SuppressLint("SetTextI18n")
-    private fun calcularImc(peso: String, altura: String) :Float{
+    private fun calcularImc(peso: String, altura: String) :Double{
 
-        val pesoConvertido = peso.toFloatOrNull()
-        val alturaConvertida = altura.toFloatOrNull()
-        var imc = 0.0F
-        val numeroImc = findViewById<TextView>(R.id.tv_result_number)
+        val pesoConvertido = peso.toDoubleOrNull()
+        val alturaConvertida = altura.toDoubleOrNull()
+        var imc:Double = 0.0
+        val numeroImc = binding.tvResultNumber
 
         if (pesoConvertido != null && alturaConvertida != null){
             imc = pesoConvertido / (alturaConvertida * alturaConvertida)
 
-            numeroImc.text = " %.2f".format(imc)
+            numeroImc.text = "${imc.roundToInt()}"
         }
-       return imc
+        return imc
     }
 
-    private fun calculaIndice(imc:Float):String {
-        var resultado = ""
-
+    private fun  calculaIndice(imc:Double):String {
+        var indice = " "
         /* menor que 18,5 abaixo do peso ideal
            18,5 a 24,9 peso normal
            25,0 a 29,9 Acima do peso
@@ -63,32 +61,32 @@ class ResultActivity : AppCompatActivity() {
            imc <= 40,0 Obesidade classe 3
          fonte OMS */
 
-        if(imc < 18.49){
-            "low".also { resultado = it }
+        if (imc <= 18.49) {
+            "low".also { indice = it }
         }
         if(imc > 18.5 && imc <= 24.99){
-            "normal".also { resultado = it }
+            "normal".also { indice = it }
         }
         if(imc > 25.0 && imc <= 29.99){
-            "high".also { resultado = it }
+            "high".also { indice = it }
         }
         if(imc > 30.0 && imc <= 34.99){
-            "obesity1".also { resultado = it }
+            "obesity1".also { indice = it }
         }
         if(imc > 35.0 && imc <= 39.99){
-            "obesity2".also { resultado = it }
+            "obesity2".also { indice = it }
         }
-        if(imc < 40.0){
-            "obesity3".also { resultado = it }
+        if (imc <= 40.0) {
+            "obesity3".also { indice = it }
         }
-        return resultado
+        return indice
 
     }
 
 
     private fun alteraCorDoCirculo(resultado: String?){
 
-        val circle = findViewById<ImageView>(R.id.ic_circle)
+        val circle = binding.icCircle
 
         when (resultado) {
             "low" -> {

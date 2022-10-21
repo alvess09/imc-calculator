@@ -1,25 +1,30 @@
 package com.example.imccalculator
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.example.imccalculator.R.layout.activity_main
+import com.example.imccalculator.databinding.ActivityMainBinding
+
+
+@SuppressLint("StaticFieldLeak")
+private lateinit var binding : ActivityMainBinding
 
 class MainActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        //passando os valores recebidos para String
-        val peso: String = findViewById<EditText>(R.id.pesoTXT).text.toString()
-        val altura: String = findViewById<EditText>(R.id.alturaTXT).text.toString()
+
 
         /* executar quando clicar no botão calcular */
+        val btnCalcular = binding.calcularBTN.setOnClickListener {
+            //passando os valores recebidos para String
+            val peso:Double = binding.pesoTXT.text.toString().toDouble()
+            val altura:Double = binding.alturaTXT.text.toString().toDouble()
 
-        val btnCalcular = findViewById<Button>(R.id.calcularBTN).setOnClickListener {
 
             val intent = Intent(this, ResultActivity::class.java)
             //passando resultado para activity de resultado
@@ -27,9 +32,10 @@ class MainActivity : AppCompatActivity(){
             intent.putExtra("altura", altura)
             startActivity(intent)
 
-            Log.i("edit","valor de peso: $peso " +
-                    ", valor de altura: $altura,")
+            Log.i("edit","valor de peso: $peso.text " +
+                    ", valor de altura: $altura.text,")
         }
+
 
     }
 

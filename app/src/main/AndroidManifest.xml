@@ -31,11 +31,13 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false"
+            android:parentActivityName=".App"/>
 
         <activity
             android:name=".ResultActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
