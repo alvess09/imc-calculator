@@ -31,7 +31,7 @@ class ResultActivity : AppCompatActivity() {
         alteraCorDoCirculo(indiceResultado)
 
         val duration =  Toast.LENGTH_SHORT
-        Toast.makeText(this, indiceResultado, duration).show()
+        Toast.makeText(this, "Seu IMC é considerado: $indiceResultado", duration).show()
 
 
     }
@@ -76,7 +76,7 @@ class ResultActivity : AppCompatActivity() {
         if(imc > 35.0 && imc <= 39.99){
             "obesity2".also { indice = it }
         }
-        if (imc <= 40.0) {
+        if (imc >= 40.0) {
             "obesity3".also { indice = it }
         }
         return indice
