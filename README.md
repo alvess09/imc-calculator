@@ -1,7 +1,5 @@
 # IMC CALCULATOR APP 🎲
 
-> 🧑🏻‍💻Santander && Digital Innovation One 🧑🏻‍💻
-
 ## This Project contain 🚀
 
 ## Content
