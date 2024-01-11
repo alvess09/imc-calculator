@@ -1,5 +1,4 @@
 # IMC CALCULATOR APP 🎲
-### Project developed during Bootcamp developer mobile at Santander
 
 > 🧑🏻‍💻Santander && Digital Innovation One 🧑🏻‍💻
 
